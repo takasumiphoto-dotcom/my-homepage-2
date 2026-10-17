@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>○○造園 | 特殊伐採・高所伐採・危険木の撤去</title>
+<meta name="description" content="クレーンが入らない場所の木も、ロープとクライミングで安全に伐採します。住宅地・狭小地・電線近くの伐採はご相談ください。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E8ECE4; --panel:#DCE2D6; --ink:#14201A; --sub:#4A5A50;
+  --spruce:#17342B; --on-spruce:#EEF2EA; --rope:#D9480F; --line:#B9C3B3;
+  --font:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#121A16;--panel:#1B2620;--ink:#E6EBE2;--sub:#A3B1A8;--spruce:#0C1F19;--on-spruce:#EEF2EA;--rope:#FF7A3D;--line:#34443B}
+}
+:root[data-theme="dark"]{--bg:#121A16;--panel:#1B2620;--ink:#E6EBE2;--sub:#A3B1A8;--spruce:#0C1F19;--on-spruce:#EEF2EA;--rope:#FF7A3D;--line:#34443B}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.9;font-size:17px}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--rope);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 24px;max-width:1040px;margin:0 auto}
+.logo{font-weight:900;font-size:20px;letter-spacing:.06em;text-decoration:none}
+.tel-s{font-weight:900;text-decoration:none;border:2px solid var(--ink);padding:6px 16px;border-radius:999px;font-size:15px;white-space:nowrap}
+
+/* hero */
+.hero{background:var(--spruce);color:var(--on-spruce);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:stretch;min-height:560px;padding-top:56px;padding-bottom:56px}
+.hero-l{display:flex;flex-direction:column;justify-content:flex-end;gap:24px;position:relative}
+.hero-l p{margin:0;max-width:30em;opacity:.9}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:14px 28px;font-weight:900;text-decoration:none;border-radius:6px;background:var(--rope);color:#fff;font-size:18px}
+.btn.ghost{background:transparent;border:2px solid var(--on-spruce);color:var(--on-spruce)}
+.tate{writing-mode:vertical-rl;font-size:clamp(40px,7vw,76px);font-weight:900;line-height:1.35;letter-spacing:.12em;margin:0;align-self:start}
+.rope{position:absolute;left:8px;top:-56px;width:2px;height:62%;background:var(--rope)}
+.rope::after{content:"";position:absolute;bottom:-9px;left:-8px;width:18px;height:18px;border:3px solid var(--rope);border-radius:50%}
+.hero-l .badge{margin-left:32px;font-size:15px;opacity:.8}
+
+/* sections */
+section{padding:88px 0}
+h2{font-size:clamp(26px,4vw,38px);font-weight:900;line-height:1.4;margin:0 0 28px;letter-spacing:.04em}
+.lead{max-width:40em;color:var(--sub);margin:0}
+.two{display:grid;grid-template-columns:5fr 7fr;gap:48px}
+.alt{background:var(--panel)}
+
+/* cases */
+.cases{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.cases li{display:grid;grid-template-columns:12em 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.cases b{font-weight:900}
+.cases span{color:var(--sub)}
+
+/* flow */
+.flow{list-style:none;margin:0;padding:0;counter-reset:s;position:relative}
+.flow::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:var(--rope)}
+.flow li{counter-increment:s;position:relative;padding:0 0 32px 64px}
+.flow li::before{content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--rope);color:#fff;font-weight:900;display:grid;place-items:center}
+.flow h3{margin:0 0 4px;font-size:20px;font-weight:900}
+.flow p{margin:0;color:var(--sub)}
+
+/* price */
+.price{border:2px solid var(--ink);padding:32px;max-width:640px}
+.price dl{margin:0}
+.price dt{font-weight:900;margin-top:16px}
+.price dd{margin:0;color:var(--sub)}
+.price dt:first-child{margin-top:0}
+
+/* contact */
+.contact{background:var(--spruce);color:var(--on-spruce);text-align:center}
+.contact .tel{display:block;font-size:clamp(34px,7vw,64px);font-weight:900;letter-spacing:.06em;text-decoration:none;margin:16px 0 4px}
+.contact p{margin:0 auto;max-width:34em;opacity:.9}
+.contact .btns{justify-content:center;margin-top:28px}
+footer{padding:28px 24px;text-align:center;font-size:14px;color:var(--sub)}
+
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr;min-height:0}
+  .tate{order:-1;writing-mode:horizontal-tb;letter-spacing:.04em}
+  .rope{display:none}
+  .hero-l .badge{margin-left:0}
+  .two{grid-template-columns:1fr;gap:16px}
+  .cases li{grid-template-columns:1fr;gap:4px}
+  section{padding:64px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#top">○○造園</a>
+  <a class="tel-s" href="tel:0000000000">000-0000-0000</a>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-l">
+      <div class="rope" aria-hidden="true"></div>
+      <span class="badge">特殊伐採・高所伐採・危険木の撤去</span>
+      <p>クレーン車が入れない庭や、家と電線のすき間に立つ木も、ロープとクライミングで上から少しずつ切り下ろします。建物や隣地を傷つけない伐採をご相談ください。</p>
+      <div class="btns">
+        <a class="btn" href="#contact">無料で見積もりを頼む</a>
+        <a class="btn ghost" href="#flow">作業の流れを見る</a>
+      </div>
+    </div>
+    <h1 class="tate">登って、<br>上から切る。</h1>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap two">
+    <h2>特殊伐採とは</h2>
+    <div>
+      <p class="lead">木を根元から倒せない場所で、人が木に登り、枝や幹を数十センチずつ切って、ロープで吊って降ろす伐採方法です。重機が入れない狭い敷地や、建物・電線・道路が近い場所で使われます。</p>
+      <p class="lead" style="margin-top:1em">手間はかかりますが、地面や周りの物への影響が小さく、倒木の危険がある木でも安全に撤去できます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="cases">
+  <div class="wrap">
+    <h2>こんなときにご相談ください</h2>
+    <ul class="cases">
+      <li><b>家のすぐ近くの木</b><span>屋根や外壁に枝が触れている、倒れたら家に当たりそうで心配。</span></li>
+      <li><b>電線や通信線の近く</b><span>枝が電線に近づいている。電力会社との調整が必要な場合もご案内します。</span></li>
+      <li><b>重機が入らない庭</b><span>道が狭い、門が小さい、裏庭にあってクレーン車が使えない。</span></li>
+      <li><b>弱った木・枯れた木</b><span>枯れている、幹が空洞になっている、台風のあとで傾いた。</span></li>
+      <li><b>大きくなりすぎた木</b><span>落ち葉や日当たり、隣地への越境で困っている。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="wrap two">
+    <h2>作業の流れ</h2>
+    <ol class="flow">
+      <li><h3>お問い合わせ</h3><p>お電話かメールで、木の場所や大きさ、困っていることをお知らせください。写真があると話が早く進みます。</p></li>
+      <li><h3>現地調査・お見積もり</h3><p>木の状態と周りの環境を確認し、作業方法と金額をご説明します。見積もりは無料です。</p></li>
+      <li><h3>作業日の決定</h3><p>ご都合と天候を見て日程を決めます。近隣へのごあいさつもご相談ください。</p></li>
+      <li><h3>伐採作業</h3><p>安全帯とロープで体を確保して木に登り、上から順に切り下ろします。地上には補助スタッフがつきます。</p></li>
+      <li><h3>片付け・処分</h3><p>切った木は運び出し、作業後は掃き掃除まで行います。切り株の処理や木材の引き取りもご相談ください。</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt" id="price">
+  <div class="wrap two">
+    <h2>料金の目安</h2>
+    <div>
+      <div class="price">
+        <dl>
+          <dt>金額の決まり方</dt>
+          <dd>木の高さ・太さ、作業場所、枝の量、搬出のしやすさで変わります。現地を見たうえで、作業前にお見積もりをお出しします。</dd>
+          <dt>目安</dt>
+          <dd>【ここに料金の目安を入力：例）高さ5m程度の木　○○円〜】</dd>
+          <dt>追加料金について</dt>
+          <dd>お見積もりの内容以外の費用は、事前の確認なしに追加しません。</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="area">
+  <div class="wrap two">
+    <h2>対応エリア</h2>
+    <div>
+      <p class="lead">【ここに対応エリアを入力：例）○○県○○市を中心に、周辺市町村】</p>
+      <p class="lead" style="margin-top:1em">上記以外の地域もご相談ください。内容により対応できる場合があります。</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>まずはお電話かメールで</h2>
+    <a class="tel" href="tel:0000000000">000-0000-0000</a>
+    <p>受付時間 8:00〜18:00（日曜休み）<br>作業中は電話に出られないことがあります。折り返しますので、留守番電話にお名前とご用件をお残しください。</p>
+    <div class="btns">
+      <a class="btn" href="mailto:info@example.com?subject=伐採のお見積もり依頼">メールで見積もりを頼む</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© ○○造園　代表：○○ ○○　所在地：【住所を入力】</footer>
+
+</body>
+</html>
